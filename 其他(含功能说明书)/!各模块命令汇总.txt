@@ -1,0 +1,78 @@
+目录路径like this：
+	'./../test_data.pkl' 'pkl/filter1_value.pkl'
+---------------------------------------------------------------------------------------------
+无路径版本：
+module1:
+	python filter1_value.py col_name min_data max_data 
+	python filter2_type.py val_type  
+	python filter3_integ.py col   
+	python filter4_del_time.py col_name low_time high_time       
+	python filter5_duplicate.py col_name
+	python filter6_re.py str_col 're_
+module2:
+	python rep1_single_val.py col_name pre_data post_data
+	 python rep2_whole_col.py col_name new_data
+	python rep3_range_val.py X_Force 0.772 0.888 131.4
+	python rep4_range_time.py col_name min_time max_time rep_time
+	python rep5_re.py str_col re_ replace_str
+module3:
+	python datamasking1_invalidation.py col_name menu cut_pre cut_post
+	python datamasking2_random.py col_name
+	python datamasking3_rouding.py col_name
+	python datamasking4_shifting.py col_name direction shift_len 
+	python datamasking5_encoding.py col_name cut_pre cut_post 
+module4:
+	python fill1_mean.py 
+	python fill1_median.py 
+	python fill3_kmeans_mean.py
+	python fill4_kmeans_median.py
+module5:
+	python Denosing1_SubBox.py col_name
+	python Denosing2_cluster.py
+	python denoising3_36+regression.py col_name 
+module6:
+	python CleanModel.py  choice1 strategy1 choice2 col_name
+---------------------------------------------------------------------------------------------
+有路径版本：
+module1:
+	python filter1_value.py X_Force 0.888 0.999 './../test_data.pkl' 'pkl/filter1_value.pkl'
+	python filter2_type.py float './../new_data.pkl' 'pkl/filter2_type.pkl'
+	python filter3_integ.py X_Force './../new_data.pkl' 'pkl/filter3_integ.pkl'
+	python filter4_time.py end_time '2022-3-1 1:2:2' '2022-12-2 1:1:4' './../new_data.pkl' './pkl/filter4_time.pkl'
+	python filter5_duplicate.py X_Force './../new_data.pkl' 'pkl/filter5_duplicate.pkl' 
+	python filter6_re.py str_col 'b[abo]y_n\S*_[a-z]+r' './../new_data.pkl' 'pkl/filter6_re.pkl'
+module2:
+	python rep1_single_val.py X_Force 0.772 131.4 './../new_data.pkl' './pkl/filter4_time.pkl'
+	python rep2_whole_col.py X_Force 131.4 './../new_data.pkl' './pkl/filter4_time.pkl'
+	python rep3_range_val.py X_Force 0.772 0.888 131.4 './../new_data.pkl' './pkl/rep3_range_val.pkl'
+	python rep4_range_time.py start_time '2021-1-1 1:1:1' '2021-6-1 1:1:4' '2066-6-6 1:1:4' './../new_data.pkl' 
+	python rep5_re.py str_col 'b[abo]y_n\S*_[a-z]+r' 'rep5~' './../new_data.pkl' 'pkl/rep5_re.pkl'
+module3:
+	---
+	python datamasking1_invalidation.py X_Force hide 2 5 './../new_data.pkl' './pkl/filter4_time.pkl'
+	python datamasking1_invalidation.py X_Force encrypt 2 end './../new_data.pkl' './pkl/filter4_time.pkl'  
+    	python datamasking1_invalidation.py str_col encrypt 2 4 './../new_data.pkl' './pkl/filter4_time.pkl'
+	---
+	python datamasking2_random.py X_Force './../new_data.pkl' 'pkl/datamasking2_random.pkl'
+	python datamasking3_rouding.py X_Force './../new_data.pkl' 'pkl/datamasking2_random.pkl'
+	python datamasking4_shifting.py X_Force left 7 './../new_data.pkl' 'pkl/datamasking2_random.pkl'
+	python datamasking5_encoding.py str_col 2 5 './../new_data.pkl' 'pkl/datamasking2_random.pkl'
+module4:
+	python fill1_mean.py './../new_data.pkl' 'pkl/fill1_mean.pkl'
+	python fill1_median.py './../new_data.pkl' 'pkl/fill1_mean.pkl'
+	python fill3_kmeans_mean.py './../new_data.pkl' 'pkl/fill3_mean.pkl'
+	python fill4_kmeans_median.py './../new_data.pkl' 'pkl/fill4_median.pkl'
+module5:
+	python denoising1_SubBox.py X_Force './../new_data.pkl' 'pkl/Denoising1_SubBox.pkl'
+	python denoising2_cluster.py './../new_data.pkl' 'pkl/Denoising1_SubBox.pkl'
+	python denoising3_36+regression.py X_Force './../new_data.pkl' 'pkl/Denoising1_SubBox.pkl'
+module6:
+	python CleanModel.py  common mean subbox 'X_Force' './../new_data.pkl' 'pkl/CleanModel.pkl'
+---------------------------------------------------------------------------------------------
+在每个功能的文件夹下有个readfile.py，在该文件的注释中，有相关命令汇总，可以在该功能的文件夹下执行指令来查看每个操作执行后的数据变化。
+
+	
+
+
+
+

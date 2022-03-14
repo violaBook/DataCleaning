@@ -1,0 +1,31 @@
+"替换"模块说明书(replace-instructions):
+---------------------------------------------------------------------------------------------------
+module2-1[rep1_single_val.py]：					值，字符串，日期(日期格式与'2021-09-09 04:05:06'一致)	
+	功能: 模块将用你输入的新值对这列中所有要求替换的值进行替换(将某一列的某个特定的值替换为另外一个值)
+	-----
+	演示: python rep1_single_val.py X_Force 0.772 131.4 './../new_data.pkl' './pkl/filter4_time.pkl'
+	参数说明: col_name pre_data post_data
+---------------------------------------------------------------------------------------------------
+module2-2[rep2_whole_col.py]:					值，字符串，日期(日期格式与'2021-09-09 04:05:06'一致)
+	功能: 模块将用你输入的新值对这列中所有元素进行替换
+	-----
+	演示: python rep2_whole_col.py X_Force 131.4 './../new_data.pkl' './pkl/filter4_time.pkl'
+	参数说明: col_name new_data 
+---------------------------------------------------------------------------------------------------
+module2-3[rep3_range_val.py]:					值
+	功能: 将某一列的某个范围的值替换为给定的一个值
+	-----
+	演示: python rep3_range_val.py X_Force 0.772 0.888 131.4 './../new_data.pkl' './pkl/rep3_range_val.pkl'
+	参数说明: col_name min_data max_data new_data
+---------------------------------------------------------------------------------------------------
+module2-4[rep4_range_time.py]:					日期
+	功能: 将某一列的某个时间范围的值替换为给定的一个值
+	-----
+	演示: python rep4_range_time.py start_time '2021-1-1 1:1:1' '2021-6-1 1:1:4' '2066-6-6 1:1:4' './../new_data.pkl' './pkl/rep4_range_time.pkl'
+	参数说明: col_name min_time max_time new_time 
+---------------------------------------------------------------------------------------------------
+module2-5[rep5_re.py]:						字符串
+	功能: 对某一列的数据用正则表达式进行过滤
+	-----
+	演示: python rep5_re.py str_col 'b[abo]y_n\S*_[a-z]+r' 'rep5~' './../new_data.pkl' 'pkl/rep5_re.pkl'
+	参数说明: col_name re_   

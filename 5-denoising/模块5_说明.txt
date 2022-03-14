@@ -1,0 +1,26 @@
+"去噪"模块说明书(denoising-instructions):
+---------------------------------------------------------------------------------------------------
+模块5-1[Denoising1_SubBox.py]：					值
+	功能: 先进行分箱，再用均值对不同分箱的数据进行填充
+	演示:
+		python denoising1_SubBox.py X_Force './../new_data.pkl' 'pkl/Denoising1_SubBox.pkl'
+	参数说明:
+		 col_name
+---------------------------------------------------------------------------------------------------
+模块5-2[Denoising2_cluster.py]:					值
+	功能: 对所有数字列聚类分析，找出离群点并删除离群点
+	演示:
+		 python denoising2_cluster.py './../new_data.pkl' 'pkl/Denoising1_SubBox.pkl'
+	参数说明: 
+		无需参数
+---------------------------------------------------------------------------------------------------
+模块5-3[Denoising3_36+regression.py]: 				值
+	功能:  通过计算三倍标准差判定离群点，再用梯度提升回归树方法回归预测对离群点进行修改
+	演示: 
+		python denoising3_36+regression.py xForce 'GBRT_Denoise_xForce.pkl' './c7.pkl' 'pkl/Denoising3_xForce.pkl'
+	参数说明: 
+		col_name use_model_path
+---------------------------------------------------------------------------------------------------
+
+
+

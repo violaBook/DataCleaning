@@ -1,0 +1,54 @@
+ "脱敏"模块说明书(datamasking-instructions):
+---------------------------------------------------------------------------------------------------
+模块3-1[datamasking1_invalidation.py]：[数据无效化]			字符串，值(无效化后不再是数值)
+	-----
+	功能: 某列数据无效化
+	演示: 
+		python datamasking1_invalidation.py X_Force hide 2 5 './../new_data.pkl' './pkl/filter4_time.pkl'             
+    		python datamasking1_invalidation.py X_Force encrypt 2 end './../new_data.pkl' './pkl/filter4_time.pkl'        
+    		python datamasking1_invalidation.py str_col encrypt 2 4 './../new_data.pkl' './pkl/filter4_time.pkl'         
+	参数说明: 
+	[4个参数:] 
+		col_name menu cut_pre cut_post
+	[解释: ]
+		col_name=>列名
+		menu=>hide(隐藏)/encrypt(打码)
+		cut_pre=>整数(起始点)
+		cut_post=>整数/'end'(结束点)
+---------------------------------------------------------------------------------------------------
+模块3-2[datamasking2_random.py]:	[数据随机化]			值
+	功能: 某列数据随机化(基本上相差不大,上下稍微浮动) 
+	-----
+	演示: 
+		python datamasking2_random.py X_Force './../new_data.pkl' 'pkl/datamasking2_random.pkl'
+	参数说明:
+		col_name
+---------------------------------------------------------------------------------------------------
+模块3-3[datamasking3_rouding.py]:	[数据小数点操作]			值
+	功能: 对用户输入列的小数点取整或者日期类型格式化
+	-----
+	演示: 
+		python datamasking3_rouding.py X_Force './../new_data.pkl' 'pkl/datamasking2_random.pkl'
+	参数说明: 
+		col_name
+---------------------------------------------------------------------------------------------------
+模块3-4[datamasking4_shifting.py]:	[左右移位]				值
+	功能: 数值型数据左右移位
+	-----
+	演示: 
+		python datamasking4_shifting.py X_Force left 7 './../new_data.pkl' 'pkl/datamasking2_random.pkl'
+	参数说明: 
+		col_name direction shift_len
+---------------------------------------------------------------------------------------------------
+模块3-5[datamasking5_encoding.py]:	[灵活编码]				字符串
+	功能: 将用户输入列处理成统一编号的数据，掩盖了之前的数据内容
+	-----
+	演示:  
+		python datamasking5_encoding.py str_col 2 5 './../new_data.pkl' 'pkl/datamasking2_random.pkl'
+	参数说明: 
+		col_name cut_pre cut_post
+---------------------------------------------------------------------------------------------------
+模块3-6
+	功能: 数据替换
+	Note: 和替换中的整列替换原理相同，故可复用 文件夹 替换中的rep2_whole_col.py
+---------------------------------------------------------------------------------------------------

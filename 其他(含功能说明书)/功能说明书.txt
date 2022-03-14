@@ -1,0 +1,58 @@
+------------------------------------------------------------------
+~~~使用说明书~~~
+---
+使用详解：
+1.模块说明书:
+	每个模块下有对应的模块说明书，使用时请按照模块说明书要求使用。
+2.数据写出文件:
+	执行具体的脚本(如filter1_value.py)后，会在该文件夹下的pkl文件夹中生成对应的pkl格式的数据库文件。
+3.时间截图:
+	每个模块的time文件夹中有记录的时间。
+4.读数据:
+	每个模块文件下有readfile.py，可以按照其注释中的命令查看数据。
+5.新建数据(便于测试):	
+	可以使用CreateData.py自行生成数据来源。
+6.数据类型提示：
+	!!!请按照本功能说明书下方的目录中每个文件要求的类型来进行输入，如果接口调试有问题，可以自行决定删除其中的数据类型。
+7.注意事项：
+	!!!请不要删除5-denosing/GBRT_model.pkl，这是一个决策树模型。
+	!!!请不要删除test_data.pkl和new_data.pkl，这是测试使用的数据库。
+------------------------------------------------------------------
+~~~该数据清洗包一共有6个主要功能点，对应的目录~~~
+---
+1-basis-filter
+	filter1_value.py					 值
+	filter2_type.py 					值,字符串,日期
+	filter3_integ.py 					值，字符串
+	filter4_time.py 					日期
+	filter5_duplicate.py 					值，日期，字符串
+	filter6_re.py					字符串
+	readfile.py
+2-basis-replace
+	rep1_single_val.py 					值，字符串，日期(日期格式与'2021-09-09 04:05:06'一致)
+	rep2_whole_col.py 					值，字符串，日期
+	re3_range_val.py					值
+	re4_range_time.py					日期
+	re5_re.py						字符串
+	readfile.py
+3-senior-datamasking
+	datamasking1_invalidation.py 			值，字符串(无效化后不再是数值)
+	datamasking2_random.py 				值
+	datamasking3_rouding.py 				值
+	datamasking4_shifting.py 				值
+	datamasking5_encoding.py				字符串
+4-fill-missingvalue
+	fill1_mean.py					值
+	fill2_median.py					值
+	fill3_kmeans_mean.py 				值
+	fill4_kmeans_median.py				值
+	readfile.py
+5-denoising
+	Denoising1_SubBox.py				值
+	Denoising2_cluster.py				值
+	Denoising3_36+regression.py				值
+	readfile.py
+6-cleanmodel
+	CleanModel.py					略
+------------------------------------------------------------------
+
